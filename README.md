@@ -1,4 +1,4 @@
-# Lutostag Brews
+# lutostag Brews
 
 ## How do I install these formulae?
 
