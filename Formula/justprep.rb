@@ -6,14 +6,11 @@ class Justprep < Formula
   license "MIT"
 
   depends_on "crystal" => :build
+  depends_on "just" => :build
 
   def install
-    chdir "crystal" do
-      Dir.mkdir("bin") unless File.directory?("bin")
-      system "crystal", "build", "--no-debug", "--release", "-p", "-o", "bin/justprep", "justprep.cr", "version.cr"
-      system "strip", "./bin/justprep"
-      bin.install "./bin/justprep"
-    end
+    system "just", "static=true", "crystal/build"
+    bin.install "./crystal/bin/justprep"
   end
 
   test do
