@@ -8,6 +8,8 @@ class Justprep < Formula
   depends_on "crystal" => :build
   depends_on "just" => :build
 
+  depends_on "pcre"
+
   def install
     system "just", "static=true", "crystal/build"
     bin.install "./crystal/bin/justprep"
