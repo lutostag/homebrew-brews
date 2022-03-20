@@ -9,6 +9,7 @@ class Justprep < Formula
 
   def install
     chdir "crystal" do
+      system "mkdir", "-p", "bin"
       system "crystal", "build", "--no-debug", "--release", "-p", "-o", "bin/justprep", "justprep.cr", "version.cr"
       system "strip", "./bin/justprep"
       bin.install "./bin/justprep"
