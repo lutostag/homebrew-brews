@@ -8,6 +8,8 @@ class Justprep < Formula
   depends_on "crystal" => :build
   depends_on "just" => :build
 
+  depends_on "bdw-gc"
+  depends_on "libevent"
   depends_on "pcre"
 
   def install
